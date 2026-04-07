@@ -1,4 +1,4 @@
-const CACHE = 'neon-pinball-v1';
+const CACHE = 'neon-pinball-v2';
 const ASSETS = [
   './',
   './index.html',

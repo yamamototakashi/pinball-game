@@ -126,7 +126,7 @@ function resetTable(){
   table.multTargetCleared = 0;
 }
 function resetBallToPlunger(){
-  ball.reset(335, 560);
+  ball.reset(331, 580);
   ball.launched = false;
 }
 
