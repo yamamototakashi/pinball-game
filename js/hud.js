@@ -1,4 +1,4 @@
-export const VERSION = 'v0.0.6';
+export const VERSION = 'v0.0.7';
 
 // HUD描画 + 上部ボタン領域(音/リスタート)のヒット判定
 export const hudButtons = {
