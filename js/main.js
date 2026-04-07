@@ -177,9 +177,9 @@ function physicsStep(dt){
   if (!ball.launched){
     // プランジャー待機
     if (consumeLaunchEdge() && state.phase === 'READY'){
-      const power = 780;
+      const power = 820;
       ball.vy = -power;
-      ball.vx = -40;
+      ball.vx = 0;
       ball.launched = true;
       state.phase = 'PLAY';
       sfx.launch();
