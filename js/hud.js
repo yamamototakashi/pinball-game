@@ -1,3 +1,5 @@
+export const VERSION = 'v0.0.5';
+
 // HUD描画 + 上部ボタン領域(音/リスタート)のヒット判定
 export const hudButtons = {
   sound: { x: 320, y: 8, w: 32, h: 24 },
@@ -58,6 +60,16 @@ export function drawHUD(ctx, state){
   // ボタン
   drawBtn(ctx, hudButtons.sound, state.muted ? '🔇' : '🔊');
   drawBtn(ctx, hudButtons.restart, '↻');
+
+  // バージョン表示 (右下)
+  ctx.fillStyle = 'rgba(92,255,158,0.7)';
+  ctx.font = '9px -apple-system,sans-serif';
+  ctx.textAlign = 'right';
+  ctx.shadowColor = '#5cff9e';
+  ctx.shadowBlur = 4;
+  ctx.fillText(VERSION, 356, 636);
+  ctx.shadowBlur = 0;
+  ctx.textAlign = 'left';
   ctx.restore();
 }
 
