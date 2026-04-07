@@ -161,7 +161,7 @@ function startFever(){
 
 // === 物理更新 ===
 const GRAVITY = 520;
-const MAX_V = 900;
+const MAX_V = 800;
 
 function physicsStep(dt){
   if (!ball.alive) return;
@@ -177,9 +177,9 @@ function physicsStep(dt){
   if (!ball.launched){
     // プランジャー待機
     if (consumeLaunchEdge() && state.phase === 'READY'){
-      const power = 720;
+      const power = 780;
       ball.vy = -power;
-      ball.vx = -20;
+      ball.vx = -40;
       ball.launched = true;
       state.phase = 'PLAY';
       sfx.launch();
@@ -498,14 +498,14 @@ function drawFlipper(ctx, f){
 // === メインループ ===
 let last = performance.now();
 let acc = 0;
-const STEP = 1/120;
+const STEP = 1/240;
 
 function loop(now){
   const dt = Math.min(0.05, (now-last)/1000);
   last = now;
   acc += dt;
   let steps = 0;
-  while (acc >= STEP && steps < 8){
+  while (acc >= STEP && steps < 16){
     if (state.phase==='PLAY' || state.phase==='READY') physicsStep(STEP);
     acc -= STEP;
     steps++;
